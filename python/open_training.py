@@ -14,8 +14,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         model = sys.argv[1]
 
-    features = Weka(os.path.dirname(__file__) +
-                    '/images').extractTo(fileName='caracteristicas')
+    features = Weka('/home/eliasheinzen/aprendizado-maquina/python/images').extractTo(fileName='caracteristicas')
 
     classifier = Classifier(data=features)
 
