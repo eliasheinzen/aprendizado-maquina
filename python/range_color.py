@@ -1,26 +1,26 @@
 class Range():
     """
-    Extract characteristics from Apu Nahasapeemapetilon character
+    Extract characteristics from Sideshow Bob character
     """
 
-    def apu_is_body(self, red, green, blue):
-        return 100 <= red <= 200 and 30 <= green <= 130 and 0 <= blue <= 50
+    def bob_is_hair(self, red, green, blue): # 181, 12, 44
+        return 171 <= red <= 191 and 2 <= green <= 22 and 34 <= blue <= 54
 
-    def apu_is_pants(self, red, green, blue):
-        return 189 <= red <= 220 and 175 <= green <= 210 and 119 <= blue <= 200
+    def bob_is_pants(self, red, green, blue): # 51, 78, 43
+        return 41 <= red <= 61 and 68 <= green <= 88 and 33 <= blue <= 53
 
-    def apu_is_shirt(self, red, green, blue):
-        return 28 <= red <= 60 and 95 <= green <= 150 and 0 <= blue <= 35
+    def bob_is_shirt(self, red, green, blue): # 83, 139, 171
+        return 73 <= red <= 93 and 129 <= green <= 149 and 161 <= blue <= 181
 
     """
-    Extract characteristics from Marge Simpson
+    Extract characteristics from Krusty the Clown
     """
 
-    def marge_is_body(self, red, green, blue):
-        return 202 <= red <= 235 and 158 <= green <= 195 and 0 <= blue <= 50
+    def krusty_is_hair(self, red, green, blue): # 29, 101, 90
+        return 19 <= red <= 39 and 91 <= green <= 111 and 80 <= blue <= 100
 
-    def marge_is_hair(self, red, green, blue):
-        return 40 <= red <= 80 and 79 <= green <= 110 and 145 <= blue <= 255
+    def krusty_is_pants(self, red, green, blue): # 180, 213, 140
+        return 170 <= red <= 190 and 203 <= green <= 223 and 130 <= blue <= 150
 
-    def marge_is_dress(self, red, green, blue):
-        return 105 <= red <= 166 and 135 <= green <= 215 and 0 <= blue <= 123
+    def krusty_is_shirt(self, red, green, blue): # 181, 186, 214
+        return 171 <= red <= 191 and 176 <= green <= 196 and 204 <= blue <= 224

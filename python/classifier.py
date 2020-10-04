@@ -182,19 +182,19 @@ class Classifier:
         prediction, features_from_img, accuracy = self.predict(model,
                                                                img, X_train, X_test, y_train, y_test)
 
-        label = 'Apu'  # 0.0
+        label = 'Bob'  # 0.0
         if prediction:
-            label = 'Marge'  # 1.0
+            label = 'Krusty'  # 1.0
 
         # API send
         print(json.dumps({
             'features': {
-                'Apu body': features_from_img[0],
-                'Apu pants': features_from_img[1],
-                'Apu shirt': features_from_img[2],
-                'Marge body': features_from_img[3],
-                'Marge hair': features_from_img[4],
-                'Marge dress': features_from_img[5]
+                'Bob hair': features_from_img[0],
+                'Bob pants': features_from_img[1],
+                'Bob shirt': features_from_img[2],
+                'Krusty hair': features_from_img[3],
+                'Krusty pants': features_from_img[4],
+                'Krusty shirt': features_from_img[5]
             },
             'prediction': {
                 'accuracy': accuracy,

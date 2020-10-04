@@ -14,12 +14,12 @@ class ReadImage:
         self.__features = []
         self.__displayImage = display_image
 
-        self.__apuBody = 0
-        self.__apuPants = 0
-        self.__apuShirt = 0
-        self.__margeBody = 0
-        self.__margeHair = 0
-        self.__margeDress = 0
+        self.__bobHair = 0
+        self.__bobPants = 0
+        self.__bobShirt = 0
+        self.__krustyHair = 0
+        self.__krustyPants = 0
+        self.__krustyShirt = 0
 
     def read(self, img):
         Logger.log(f'Image received {img}')
@@ -53,37 +53,37 @@ class ReadImage:
         range = Range()
         b, g, r = pixel
 
-        # check for Apu characteristics
-        if range.apu_is_body(r, g, b):
-            self.__apuBody += 1
+        # check for Bob characteristics
+        if range.bob_is_hair(r, g, b):
+            self.__bobHair += 1
             if self.__displayImage:
-                self.set_color(self.__apuBody, index_width, index_height)
+                self.set_color(self.__bobHair, index_width, index_height)
 
-        if range.apu_is_pants(r, g, b):
-            self.__apuPants += 1
+        if range.bob_is_pants(r, g, b):
+            self.__bobPants += 1
             if self.__displayImage:
-                self.set_color(self.__apuPants, index_width, index_height)
+                self.set_color(self.__bobPants, index_width, index_height)
 
-        if range.apu_is_shirt(r, g, b):
-            self.__apuShirt += 1
+        if range.bob_is_shirt(r, g, b):
+            self.__bobShirt += 1
             if self.__displayImage:
-                self.set_color(self.__apuShirt, index_width, index_height)
+                self.set_color(self.__bobShirt, index_width, index_height)
 
-        # check for marge
-        if range.marge_is_body(r, g, b):
-            self.__margeBody += 1
+        # check for Krusty
+        if range.krusty_is_hair(r, g, b):
+            self.__krustyHair += 1
             if self.__displayImage:
-                self.set_color(self.__margeBody, index_width, index_height)
+                self.set_color(self.__krustyHair, index_width, index_height)
 
-        if range.marge_is_hair(r, g, b):
-            self.__margeHair += 1
+        if range.krusty_is_pants(r, g, b):
+            self.__krustyPants += 1
             if self.__displayImage:
-                self.set_color(self.__margeHair, index_width, index_height)
+                self.set_color(self.__krustyPants, index_width, index_height)
 
-        if range.marge_is_dress(r, g, b):
-            self.__margeDress += 1
+        if range.krusty_is_shirt(r, g, b):
+            self.__krustyShirt += 1
             if self.__displayImage:
-                self.set_color(self.__margeDress, index_width, index_height)
+                self.set_color(self.__krustyShirt, index_width, index_height)
 
     """
       TODO: estudar como associar uma variável recebida com o self
@@ -106,27 +106,27 @@ class ReadImage:
     def normalizeFeatures(self, img):
         Logger.log('Normalize Features')
 
-        self.__apuBody = self.calc_normalize(self.__apuBody)
-        self.__apuPants = self.calc_normalize(self.__apuPants)
-        self.__apuShirt = self.calc_normalize(self.__apuShirt)
-        self.__margeBody = self.calc_normalize(self.__margeBody)
-        self.__margeHair = self.calc_normalize(self.__margeHair)
-        self.__margeDress = self.calc_normalize(self.__margeDress)
+        self.__bobHair = self.calc_normalize(self.__bobHair)
+        self.__bobPants = self.calc_normalize(self.__bobPants)
+        self.__bobShirt = self.calc_normalize(self.__bobShirt)
+        self.__krustyHair = self.calc_normalize(self.__krustyHair)
+        self.__krustyPants = self.calc_normalize(self.__krustyPants)
+        self.__krustyShirt = self.calc_normalize(self.__krustyShirt)
 
-        apu_or_marge = 0.0  # Apu
+        bob_or_krusty = 0.0  # Bob
         filename = os.path.basename(img)[0]
 
-        if filename == 'm':
-            apu_or_marge = 1.0  # marge
+        if filename == 'k':
+            bob_or_krusty = 1.0  # Krusty
 
         features = [
-            self.__apuBody,
-            self.__apuPants,
-            self.__apuShirt,
-            self.__margeBody,
-            self.__margeHair,
-            self.__margeDress,
-            apu_or_marge
+            self.__bobHair,
+            self.__bobPants,
+            self.__bobShirt,
+            self.__krustyHair,
+            self.__krustyPants,
+            self.__krustyShirt,
+            bob_or_krusty
         ]
 
         Logger.log(features)
