@@ -8,4 +8,4 @@ output/data.h5
 output/labels.h5
 
 dataset/
-python/images/test.py
+python/images/rename_images.py
