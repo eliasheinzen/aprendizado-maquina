@@ -15,6 +15,7 @@
 ## Características utilizadas
 
 > As seguintes características foram consideradas, utilizando-se de um range de 10 pontos para menos e para mais, para cada uma das cores (R/G/B)
+
 > Ex: Cabelo do Bob, considerei: R entre 171 e 191; G entre 2 e 22; B entre 34 e 54.
 
 ### Bob
