@@ -19,8 +19,8 @@ class Classifier:
     def __init__(self, data=None):
         self.__labels = []
         self.__data = data
-        self.__h5_data = os.path.dirname(__file__) + '/output/data.h5'
-        self.__h5_labels = os.path.dirname(__file__) + '/output/labels.h5'
+        self.__h5_data = './output/data.h5'
+        self.__h5_labels = './output/labels.h5'
 
     def prepare(self):
         features, classes = [], []

@@ -7,5 +7,5 @@ __pycache__/
 output/data.h5
 output/labels.h5
 
-dataset/
+dataset
 python/rename_images.py

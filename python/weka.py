@@ -27,7 +27,7 @@ class Weka():
         Logger.log(
             f'\n{len(only_files)} images found in {self.images_directory} directory!', True)
 
-        return only_files[610:630]
+        return only_files[600:650]
         # return only_files
 
     def extractTo(self, fileName):
